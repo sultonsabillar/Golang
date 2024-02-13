@@ -6,7 +6,7 @@ import (
 
 func main() {
 	// Variable yang berisi string kalimat
-	kalimat := "Selamat Malam"
+	kalimat := "selamat malam"
 
 	// Pecah kalimat menjadi huruf-huruf
 	var hurufHuruf []string
@@ -24,6 +24,6 @@ func main() {
 
 	// Tampilkan hasil perhitungan kemunculan huruf
 	for huruf, jumlah := range kemunculanHuruf {
-		fmt.Printf("Huruf: %s, Jumlah: %d\n", huruf, jumlah)
+		fmt.Printf("%s: %d\n", huruf, jumlah)
 	}
 }
