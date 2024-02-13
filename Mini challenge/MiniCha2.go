@@ -5,8 +5,10 @@ import (
 )
 
 func main() {
-	// Variable yang berisi string kalimat
-	kalimat := "selamat malam"
+	// Membaca input dari pengguna
+	fmt.Print("Masukkan kalimat: ")
+	var kalimat string
+	fmt.Scanln(&kalimat)
 
 	// Pecah kalimat menjadi huruf-huruf
 	var hurufHuruf []string
@@ -22,8 +24,12 @@ func main() {
 		kemunculanHuruf[huruf]++
 	}
 
-	// Tampilkan hasil perhitungan kemunculan huruf
+	// Konversi map menjadi slice
+	var hasil []string
 	for huruf, jumlah := range kemunculanHuruf {
-		fmt.Printf("%s: %d\n", huruf, jumlah)
+		hasil = append(hasil, fmt.Sprintf("%s: %d", huruf, jumlah))
 	}
+
+	// Tampilkan hasil perhitungan kemunculan huruf
+	fmt.Println(hasil)
 }
