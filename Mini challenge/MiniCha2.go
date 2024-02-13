@@ -2,26 +2,28 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
 	// Variable yang berisi string kalimat
-	kalimat := "Halo teman-teman, apa kabar hari ini?"
+	kalimat := "Selamat Malam"
 
-	// Pecah kalimat menjadi kata-kata
-	kataKata := strings.Fields(kalimat)
-
-	// Inisialisasi map untuk menyimpan jumlah kemunculan kata
-	kemunculanKata := make(map[string]int)
-
-	// Looping untuk menghitung kemunculan kata
-	for _, kata := range kataKata {
-		kemunculanKata[kata]++
+	// Pecah kalimat menjadi huruf-huruf
+	var hurufHuruf []string
+	for _, huruf := range kalimat {
+		hurufHuruf = append(hurufHuruf, string(huruf))
 	}
 
-	// Tampilkan hasil perhitungan kemunculan kata
-	for kata, jumlah := range kemunculanKata {
-		fmt.Printf("Kata: %s, Jumlah: %d\n", kata, jumlah)
+	// Inisialisasi map untuk menyimpan jumlah kemunculan huruf
+	kemunculanHuruf := make(map[string]int)
+
+	// Looping untuk menghitung kemunculan huruf
+	for _, huruf := range hurufHuruf {
+		kemunculanHuruf[huruf]++
+	}
+
+	// Tampilkan hasil perhitungan kemunculan huruf
+	for huruf, jumlah := range kemunculanHuruf {
+		fmt.Printf("Huruf: %s, Jumlah: %d\n", huruf, jumlah)
 	}
 }
