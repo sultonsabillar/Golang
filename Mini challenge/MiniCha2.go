@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// Membaca input dari pengguna
@@ -16,9 +18,12 @@ func main() {
 		kemunculanHuruf[huruf]++
 	}
 
-	// Tampilkan hasil perhitungan kemunculan huruf
-	fmt.Println("Hasil perhitungan kemunculan huruf:")
-	for huruf, jumlah := range kemunculanHuruf {
-		fmt.Printf("%c: %d\n", huruf, jumlah)
+	// Tampilkan huruf satu per satu ke bawah
+	for _, huruf := range kalimat {
+		fmt.Println(string(huruf))
 	}
+
+	// Tampilkan hasil perhitungan kemunculan huruf
+	fmt.Println()
+	fmt.Println("map", kemunculanHuruf)
 }
