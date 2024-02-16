@@ -1,21 +1,24 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func main() {
 	// Membaca input dari pengguna
 	fmt.Print("Masukkan kalimat: ")
-	var kalimat string
-	fmt.Scanln(&kalimat)
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	kalimat := scanner.Text()
 
 	// Inisialisasi map untuk menyimpan jumlah kemunculan huruf
-	kemunculanHuruf := make(map[rune]int)
+	kemunculanHuruf := make(map[string]int)
 
 	// Looping untuk menghitung kemunculan huruf
 	for _, huruf := range kalimat {
-		kemunculanHuruf[huruf]++
+		kemunculanHuruf[string(huruf)]++
 	}
 
 	// Tampilkan huruf satu per satu ke bawah
@@ -24,6 +27,5 @@ func main() {
 	}
 
 	// Tampilkan hasil perhitungan kemunculan huruf
-	fmt.Println()
-	fmt.Println("map", kemunculanHuruf)
+	fmt.Println("\n", kemunculanHuruf)
 }
