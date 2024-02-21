@@ -18,7 +18,7 @@ var temanTeman = []Teman{
 	{"Fitri", "Jakarta", "Developer", "Ingin mempelajari Golang untuk pengembangan aplikasi backend."},
 	{"Budi", "Bandung", "Designer", "Tertarik dengan kemampuan konkurensi dan kinerja yang cepat pada Golang."},
 	{"Cindy", "Surabaya", "Data Analyst", "Ingin menggunakan Golang untuk analisis data skala besar."},
-	{"Rudi", "Yogyakarta", "Engineer", "Ingin memperdalam pemrograman dengan Golang."},
+	{"Eko", "Malang", "DevOps Engineer", "Tertarik dengan deployment aplikasi menggunakan Golang."},
 }
 
 // Function untuk mencari teman berdasarkan nama
@@ -32,9 +32,6 @@ func cariTeman(nama string) (Teman, bool) {
 }
 
 func main() {
-	// Menambahkan satu data teman baru
-	temanTeman = append(temanTeman, Teman{"Sari", "Surakarta", "Entrepreneur", "Ingin membangun aplikasi startup menggunakan Golang."})
-
 	// Mendapatkan argumen dari CLI
 	args := os.Args
 	if len(args) < 2 {
