@@ -17,13 +17,6 @@ type Teman struct {
 var temanTeman = []Teman{
 	{"Fitri", "Jakarta", "Developer", "Ingin mempelajari Golang untuk pengembangan aplikasi backend."},
 	{"Budi", "Bandung", "Designer", "Tertarik dengan kemampuan konkurensi dan kinerja yang cepat pada Golang."},
-	{"Cindy", "Surabaya", "Data Analyst", "Ingin menggunakan Golang untuk analisis data skala besar."},
-	{"Rudi", "Yogyakarta", "Engineer", "Ingin memperdalam pemrograman dengan Golang."},
-	{"Sari", "Surakarta", "Entrepreneur", "Ingin membangun aplikasi startup menggunakan Golang."},
-	// Data teman baru
-	{"Dian", "Semarang", "Software Engineer", "Ingin meningkatkan skill pemrograman dengan Golang."},
-	{"Eko", "Malang", "DevOps Engineer", "Tertarik dengan deployment aplikasi menggunakan Golang."},
-}
 
 // Function untuk mencari teman berdasarkan nama
 func cariTeman(nama string) (Teman, bool) {
