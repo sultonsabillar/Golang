@@ -14,10 +14,10 @@ type Interface2 struct {
 	Data int
 }
 
-// func processData1(data Interface1) {
-// 	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
-// 	fmt.Println("Processed Interface1 data:", data.Data)
-// }
+func processData1(data Interface1) {
+	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
+	fmt.Println("Processed Interface1 data:", data.Data)
+}
 
 func processData2(data Interface2) {
 	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
