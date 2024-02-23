@@ -19,10 +19,10 @@ func processData1(data Interface1) {
 	fmt.Println("Processed Interface1 data:", data.Data)
 }
 
-func processData2(data Interface2) {
-	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
-	fmt.Println("Processed Interface2 data:", data.Data)
-}
+// func processData2(data Interface2) {
+// 	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
+// 	fmt.Println("Processed Interface2 data:", data.Data)
+// }
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
