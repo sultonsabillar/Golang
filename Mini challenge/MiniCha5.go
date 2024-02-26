@@ -20,15 +20,15 @@ var dataBiodata = map[string]Biodata{
 	"user2@example.com": {"User2", 30, "Alamat User2", "user2@example.com"},
 }
 
-// Handler untuk halaman index (halaman biodata)
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	// Mendapatkan email dari cookie atau form data (setelah login)
-	var email string
-	if cookie, err := r.Cookie("email"); err == nil {
-		email = cookie.Value
-	} else {
-		email = r.FormValue("email")
-	}
+// // Handler untuk halaman index (halaman biodata)
+// func indexHandler(w http.ResponseWriter, r *http.Request) {
+// 	// Mendapatkan email dari cookie atau form data (setelah login)
+// 	var email string
+// 	if cookie, err := r.Cookie("email"); err == nil {
+// 		email = cookie.Value
+// 	} else {
+// 		email = r.FormValue("email")
+// 	}
 
 	// Memeriksa apakah email ada dalam data biodata
 	biodata, ok := dataBiodata[email]
