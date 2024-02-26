@@ -30,12 +30,12 @@ var dataBiodata = map[string]Biodata{
 // 		email = r.FormValue("email")
 // 	}
 
-	// Memeriksa apakah email ada dalam data biodata
-	biodata, ok := dataBiodata[email]
-	if !ok {
-		http.Error(w, "Biodata tidak ditemukan", http.StatusNotFound)
-		return
-	}
+	// // Memeriksa apakah email ada dalam data biodata
+	// biodata, ok := dataBiodata[email]
+	// if !ok {
+	// 	http.Error(w, "Biodata tidak ditemukan", http.StatusNotFound)
+	// 	return
+	// }
 
 	// Menampilkan biodata pengguna pada halaman index
 	tmpl := template.Must(template.New("index").Parse(indexTemplate))
