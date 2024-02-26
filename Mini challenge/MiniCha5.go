@@ -42,19 +42,19 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, biodata)
 }
 
-// // Handler untuk halaman login
-// func loginHandler(w http.ResponseWriter, r *http.Request) {
-// 	if r.Method != http.MethodPost {
-// 		http.ServeFile(w, r, "login.html")
-// 		return
-// 	}
+// Handler untuk halaman login
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.ServeFile(w, r, "login.html")
+		return
+	}
 
-// 	email := r.FormValue("email")
-// 	_, ok := dataBiodata[email]
-// 	if !ok {
-// 		http.Error(w, "Email tidak valid", http.StatusBadRequest)
-// 		return
-// 	}
+	email := r.FormValue("email")
+	_, ok := dataBiodata[email]
+	if !ok {
+		http.Error(w, "Email tidak valid", http.StatusBadRequest)
+		return
+	}
 
 	// Set cookie email
 	http.SetCookie(w, &http.Cookie{
