@@ -2,53 +2,38 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"math/rand"
+	"time"
 )
 
-// Struct untuk menyimpan data teman
-type Teman struct {
-	Nama      string
-	Alamat    string
-	Pekerjaan string
-	Alasan    string
+type Interface1 struct {
+	Data string
 }
 
-// Data teman-teman di kelas
-var temanTeman = []Teman{
-	{"Fitri", "Jakarta", "Developer", "Ingin mempelajari Golang untuk pengembangan aplikasi backend."},
-	{"Budi", "Bandung", "Designer", "Tertarik dengan kemampuan konkurensi dan kinerja yang cepat pada Golang."},
+type Interface2 struct {
+	Data int
+}
 
-// Function untuk mencari teman berdasarkan nama
-func cariTeman(nama string) (Teman, bool) {
-	for _, teman := range temanTeman {
-		if teman.Nama == nama {
-			return teman, true
-		}
-	}
-	return Teman{}, false
+func processData1(data Interface1) {
+	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
+	fmt.Println("Processed Interface1 data:", data.Data)
+}
+
+func processData2(data Interface2) {
+	time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
+	fmt.Println("Processed Interface2 data:", data.Data)
 }
 
 func main() {
-	// Mendapatkan argumen dari CLI
-	args := os.Args
-	if len(args) < 2 {
-		fmt.Println("Harap berikan nama teman sebagai argumen CLI.")
-		return
+	rand.Seed(time.Now().UnixNano())
+
+	for i := 0; i < 4; i++ {
+		data1 := Interface1{"Data1"}
+		data2 := Interface2{42}
+
+		go processData1(data1)
+		go processData2(data2)
 	}
 
-	// Mengambil nama teman dari argumen CLI
-	namaTeman := args[1]
-
-	// Mencari teman berdasarkan nama
-	teman, found := cariTeman(namaTeman)
-	if !found {
-		fmt.Printf("Data dengan nama %s tidak tersedia.\n", namaTeman)
-		return
-	}
-
-	// Menampilkan data teman
-	fmt.Println("Nama:", teman.Nama)
-	fmt.Println("Alamat:", teman.Alamat)
-	fmt.Println("Pekerjaan:", teman.Pekerjaan)
-	fmt.Println("Alasan memilih kelas Golang:", teman.Alasan)
+	time.Sleep(1 * time.Second) // Waiting for goroutines to finish
 }
